@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import Component from './component/Component'
+import './index'
+const App = ()=>{
+  // const name= "Amitabh"
+  const [ name, setName ] = useState("Amitabh123"); 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const changeName = ()=>{
+    setName("Amit");
+  }
+
+  const changeNameBack = ()=>{
+    setName("Amitabh")
+  }
+
+  return(
+    <div>
+      <h1 className='red'>Hello, {name} </h1>
+      <button onClick={()=> changeName()} >ChangeName</button>
+      <button onClick={()=> changeNameBack()} >ChangeNameBack</button>
     </div>
-  );
+  )
 }
 
 export default App;
